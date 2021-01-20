@@ -6,9 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
@@ -16,7 +14,7 @@ import javax.persistence.Id;
 @Getter
 public class Account {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
     private String username;
 
@@ -24,6 +22,8 @@ public class Account {
     private String email;
 
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     private String getRoleValue(){
