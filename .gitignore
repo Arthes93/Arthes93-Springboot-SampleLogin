@@ -38,3 +38,4 @@ out/
 
 ### Application Properties ###
 **/application-mysql.yml
+**/application-oauth2.yml
